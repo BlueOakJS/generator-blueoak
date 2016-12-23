@@ -1,0 +1,105 @@
+<!--
+Copyright (c) 2015-2017 PointSource, LLC.
+MIT Licensed
+-->
+
+<div class="pull-up" style="font-size:0.75rem; margin-left:5px;">
+
+	<table class='table'>
+		<tr>
+			<td class="primary callout small" colspan="2"><h3>Data synchronization settings</h3></td>
+		</tr>
+		<tr>
+			<td style="width:5%"><input type="checkbox" ng-model="vm.config.syncOverWifiOnly" ng-change="vm.changeDataSyncSettings()" /></td>
+			<td style="vertical-align:top" ng-click="vm.changeDataSyncSettings('wifi')">Sync data over WiFi network only</td>
+		</tr>
+
+		<tr>
+			<td><input type="checkbox" ng-model="vm.config.pull" ng-change="vm.changeDataSyncSettings()" /></td>
+			<td style="vertical-align:top" ng-click="vm.changeDataSyncSettings('pull')">Pull data</td>
+		</tr>
+
+		<tr>
+			<td><input type="checkbox" ng-model="vm.config.push" ng-change="vm.changeDataSyncSettings()" /></td>
+			<td style="vertical-align:top" ng-click="vm.changeDataSyncSettings('push')">Push data</td>
+		</tr>
+	</table>
+
+	<br />
+	<table>
+		<tr>
+			<td class="primary callout small" colspan="4">
+				<h3>Synchronization status: {{vm.replication.currentStatus}}</h3>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<th>Last Sync</th>
+			<th># of docs</th>
+			<th>Status</th>
+		</tr>
+		<tr>
+			<td>Pull</td>
+			<td>{{vm.replication.lastSync.pull.eventTimestamp | date:'medium'}}</td>
+			<td>{{vm.replication.lastSync.pull.docs}}</td>
+			<td>{{vm.replication.lastSync.pull.status}}</td>
+		</tr>
+		<tr class="callout alert" ng-show="vm.replication.lastSync.pull.errors.length">
+			<td>Errors</td>
+			<td colspan="3">
+				<div ng-repeat="err in vm.replication.lastSync.pull.errors">
+					<div>{{err.error + ':' + err.message}}</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Push</td>
+			<td>{{vm.replication.lastSync.push.eventTimestamp | date:'medium'}}</td>
+			<td>{{vm.replication.lastSync.push.docs}}</td>
+			<td>{{vm.replication.lastSync.push.status}}</td>
+		</tr>
+		<tr class="callout alert" ng-show="vm.replication.lastSync.push.errors.length">
+			<td>Errors</td>
+			<td colspan="3">
+				<div ng-repeat="err in vm.replication.lastSync.push.errors">
+					<div>{{err.error + ':' + err.message}}</div>
+				</div>
+			</td>
+		</tr>
+		<tr class="callout alert" ng-show="vm.replication.lastSync.errors.length">
+			<td>Errors</td>
+			<td colspan="3">
+				<div ng-repeat="err in vm.replication.lastSync.errors">
+					<div>{{err.error + ':' + err.message}}</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+<!--
+	<table>
+		<tr>
+			<td><input type="button" ng-click="vm.createHoursDoc()" value="createHoursDoc" /></td>
+			<td>{{vm.replication.lastDoc}}</td>
+		</tr>
+	</table>
+-->
+	<br />
+
+
+	<table>
+		<tr>
+			<td class="primary callout small" colspan="2"><h3>Current network status</h3>
+			</td>
+		</tr>
+		<tr>
+			<td>Network Type:</td>
+			<td>{{vm.networkStatus.networkType}}</td>
+		</tr>
+		<tr>
+			<td>Network Status:</td>
+			<td>{{vm.networkStatus.networkStatus}}</td>
+		</tr>
+	</table>
+</div>

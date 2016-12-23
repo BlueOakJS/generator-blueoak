@@ -1,0 +1,31 @@
+{
+  "staticFiles": [
+    "client/gulpfile.js",
+    "client/.editorconfig",
+
+    "client/src/app.config.json",
+    "client/src/**/.ico",
+    "client/src/**/.png",
+    "client/.templates/*",
+
+    "server/nodemon.json",
+    "server/handlers/",
+    "server/services/",
+    "server/swagger/",
+    "server/test/unit/test.js",
+    "server/.eslintrc"
+  ],
+  "templates": [
+    "client/package.json",
+    "client/bower.json",
+    "client/.gitignore",
+    "client/.eslintrc",
+
+    "client/src/**/*.js",
+    "client/src/**/*.html",
+    "client/src/**/*.scss",
+
+    "server/package.json",
+    "server/config/*.json"
+  ]
+}

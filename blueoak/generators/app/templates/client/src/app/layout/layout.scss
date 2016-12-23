@@ -1,0 +1,52 @@
+$view-transition-duration: 300ms;
+
+[ui-view="root"], [ui-view="content"], .main, .primary-view {
+    @extend %full-size;
+    overflow: hidden;
+}
+
+.main {
+    position: relative;
+}
+
+.primary-view {
+    position: absolute;
+    overflow-y: scroll;
+
+    .has-header & {
+        height: calc(100% - #{$bo-header-height});
+    }
+
+    .has-footer & {
+        height: calc(100% - #{$bo-footer-height});
+    }
+
+    .has-header.has-footer & {
+        height: calc(100% - #{$bo-header-height + $bo-footer-height});
+    }
+
+    &.ng-enter, &.ng-leave {
+        transition: $view-transition-duration all;
+        position: absolute;
+        overflow-x: hidden;
+    }
+
+    &.ng-enter {
+        animation: slideInRight $view-transition-duration;
+    }
+
+    &.ng-leave {
+        animation: slideOutLeft $view-transition-duration;
+    }
+}
+
+.reverse {
+    .primary-view.ng-enter {
+        animation: slideInLeft $view-transition-duration;
+    }
+
+    .primary-view.ng-leave {
+        animation: slideOutRight $view-transition-duration;
+    }
+}
+

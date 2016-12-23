@@ -1,0 +1,80 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+%fillArea {
+  width: 100%;
+  height: 100%;
+}
+
+.angular-google-map {
+  @extend %fillArea;
+}
+
+.angular-google-map-container {
+  @extend %fillArea;
+}
+
+.map-overlay {
+  @include boxShadow('', 0, 0, .625rem, 0, 0, 0, 0, .2);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  border-top: 1px solid #eee;
+  background: rgba(255, 255, 255, .85);
+}
+
+.map-overlay-container {
+  @extend %fillArea;
+  position: relative;
+  ul {
+    width: 100%;
+    li {
+      display: block;
+      list-style: none;
+      padding: 5px 10px;
+      font-size: 14px;
+      color: #444;
+    }
+  }
+}
+
+.map-overlay-close {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #444;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.fill-area {
+  @extend %fillArea;
+}
+
+#wrapper {
+  @extend %fillArea;
+  padding-bottom: 0 !important;
+}
+
+#mapWrap {
+  @include boxSizing(border-box);
+  position: absolute;
+  top: -6px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $white;
+  width: 100%;
+  ui-gmap-google-map {
+    display: inline-block;
+    ui-gmap-markers {
+      @extend %fillArea;
+      display: inline-block;
+    }
+  }
+}

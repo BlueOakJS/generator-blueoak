@@ -1,0 +1,18 @@
+<!--
+Copyright (c) 2015-2017 PointSource, LLC.
+MIT Licensed
+-->
+
+<div class="view-content view-content-home">
+	<h1>Barcode scannner demo</h1>
+	<button ng-click='vm.scan()' id="scanBtn" class="button">{{vm.scanmsg}}</button>
+	<br/>
+	Result: {{vm.barcodeResponse.text}}
+	<br/>
+	Format: {{vm.barcodeResponse.format}}
+	<br/>
+	Cancelled: {{vm.barcodeResponse.cancelled}}
+	<br/>
+	Error: {{vm.error}}
+</div>
+

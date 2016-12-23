@@ -1,0 +1,16 @@
+.off-canvas, .off-canvas-wrapper, .off-canvas-wrapper-inner {
+    height: 100%;
+}
+
+ul.side-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    a {
+        display: inline-block;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $secondary-color;
+    }
+}

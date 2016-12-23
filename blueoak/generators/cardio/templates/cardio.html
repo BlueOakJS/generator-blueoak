@@ -1,0 +1,26 @@
+<!--
+Copyright (c) 2015-2017 PointSource, LLC.
+MIT Licensed
+-->
+
+<div class="view-content view-content-home">
+	<h1>CardIO scan demo</h1>
+	<button ng-click='vm.scan()' id="scanBtn">{{vm.scanmsg}}</button>
+	<br/>
+	Version: {{vm.cardioVersion}}
+	<br/>
+	Card Type: {{vm.cardioresp.card_type}}
+	<br/>
+	Redacted Card number: {{vm.cardioresp.redacted_card_number}}
+	<br/>
+	Card number: {{vm.cardioresp.card_number}}
+	<br/>
+	Exp Mo: {{vm.cardioresp.expiry_month}}
+	<br/>
+	Exp Yr: {{vm.cardioresp.expiry_year}}
+	<br/>
+	CVV: {{vm.cardioresp.cvv}}
+	<br/>
+	ZIP: {{vm.cardioresp.zip}}
+</div>
+

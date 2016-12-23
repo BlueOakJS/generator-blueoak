@@ -1,0 +1,24 @@
+<!--
+Copyright (c) 2015-2017 PointSource, LLC.
+MIT Licensed
+-->
+
+<div class="view-content">
+	<h1>Locator</h1>
+
+	<auto-complete-location
+		ng-model="vm.locationInfo"
+		min-characters="3"
+		max-suggestions="5">
+	</auto-complete-location>
+
+	<p ng-if="vm.locationInfo.location.coordinates.lat">
+		{{vm.locationInfo.location.name}} - ({{vm.locationInfo.location.coordinates.lat}}, {{vm.locationInfo.location.coordinates.lng}})
+	</p>
+
+	<div data-alert class="alert-box alert" ng-if="vm.locationFailure">
+	  Failed to get location info.
+	  <a class="close" ng-click="vm.closeAlert()">&times;</a>
+	</div>
+
+</div>

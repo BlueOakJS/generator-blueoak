@@ -1,0 +1,27 @@
+// 1rem for font size, 2px for top and bottom borders
+$footer-button-padding: #{($bo-footer-height - 1rem - rem-calc(2)) / 2};
+footer {
+    @include foundation-title-bar;
+
+    height: $bo-footer-height;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    .button-group {
+        height: 100%;
+
+        .button {
+            padding-top: $footer-button-padding;
+            padding-bottom: $footer-button-padding;
+
+            &:first-child, &:last-child {
+                border-radius: 0;
+            }
+        }
+    }
+
+    [ui-sref-active].active {
+        background-color: $secondary-color;
+    }
+}

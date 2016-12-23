@@ -1,0 +1,24 @@
+$fa-font-path: '../../bower_components/font-awesome/fonts';
+$bo-font-path: '../../bower_components/blueoak-ui/dist/fonts';
+
+$titlebar-padding: 0;
+
+@import 'src/assets/scss/_foundation-settings-overrides';
+@import 'src/assets/scss/_blue-oak-ui-settings-overrides';
+
+// this is the line I added manually
+@import 'bower_components/font-awesome/scss/font-awesome';
+
+@import 'bower_components/blueoak-ui/dist/scss/blue-oak-ui-default';
+
+%full-size {
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

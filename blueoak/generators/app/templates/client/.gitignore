@@ -1,0 +1,22 @@
+.DS_Store
+node_modules/
+npm-debug.log
+bower_components/
+coverage/
+.sass-cache/
+<%- props.cordovaDirectory %>/www
+<%- props.cordovaDirectory %>/platforms/ios/www
+<%- props.cordovaDirectory %>/platforms/android/assets/www
+<%- props.cordovaDirectory %>/platforms/android/CordovaLib/build
+<%- props.cordovaDirectory %>/platforms/android/.gradle
+!<%- props.cordovaDirectory %>/platforms/android/cordova/node_modules
+!<%- props.cordovaDirectory %>/platforms/ios/cordova/node_modules
+!<%- props.cordovaDirectory %>/plugins/cordova-plugin-mfp/hooks/node_modules
+UserInterfaceState.xcuserstate
+.tmp/
+dist/
+*.swp
+*.swo
+generated/
+ipa
+apk

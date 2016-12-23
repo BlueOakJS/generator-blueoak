@@ -1,0 +1,37 @@
+<!--
+Copyright (c) 2015-2017 PointSource, LLC.
+MIT Licensed
+-->
+
+<div id="mapWrap">
+  <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom' class="fill-area">
+    <ui-gmap-markers
+      models="vm.markers.models"
+      idKey="vm.markers.idKey"
+      coords="vm.markers.coords"
+      click="vm.markers.click"
+      fit="vm.markers.fit"
+      icon="vm.markers.icon">
+    </ui-gmap-markers>
+  </ui-gmap-google-map>
+</div>
+<div class="map-overlay" ng-show="vm.showOverlay">
+  <div class="map-overlay-container">
+    <div class="map-overlay-close" ng-click="vm.showOverlay = false">&times;</div>
+    <ul>
+      <li>
+        Name: {{vm.selectedMarker.name}}
+      </li>
+      <li>
+        Latitude: {{vm.selectedMarker.coords.latitude}}
+      </li>
+      <li>
+        Longitude: {{vm.selectedMarker.coords.longitude}}
+      </li>
+      <li>
+        Location ID: {{vm.selectedMarker.locationID}}
+      </li>
+    </ul>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2015-2017 PointSource, LLC.
+ * MIT Licensed
+ */
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
+
+@import '../assets/scss/foundation-settings';
+
+@import '../assets/scss/blueoak-ui-settings';
+
+@import '../../bower_components/blueoak-ui/dist/scss/blue-oak-ui-default';
